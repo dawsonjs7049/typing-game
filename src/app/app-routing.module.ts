@@ -6,8 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
-    path: "",
-    component: HomeComponent,
+    path: '',
+    redirectTo:'/home',
+    pathMatch: 'full'
   },
   {
     path: "home",
@@ -20,10 +21,6 @@ const routes: Routes = [
   {
     path: "history",
     component: HistoryComponent,
-  },
-  {
-    path: "**",
-    redirectTo: "/"
   }
 ];
 
