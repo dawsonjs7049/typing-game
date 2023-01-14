@@ -33,6 +33,10 @@ if you want to guard a route
             )
         }
 
+for angular routing on netlify
+    -> add "src/_redirects to assets array in angular.json
+    -> add file called _redirects in src directory with just this: "/* /index.html 200"
+
 
 to start local server
     -> ng serve -o
