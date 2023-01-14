@@ -1,0 +1,22 @@
+<div class="min-w-full min-h-screen bg-slate-100">
+    <nav class="min-w-full p-8 mb-8 flex flex-row justify-between align-middle bg-white">
+        <h1 class="text-3xl font-bold">Tilted Typing</h1>
+        <button class="p-3 rounded-md shadow-lg bg-cyan-200 hover:bg-cyan-300" (click)="goToHistory()">View History</button>
+    </nav>
+    <div class="h-full w-screen flex flex-col justify-center align-middle" @fadeSlideInOut>
+        <h1 class="text-center text-5xl m-10 p-10">Test Your Typing Skills</h1>
+       
+        <img src="/assets/keyboard.png" alt="keyboard" class="h-72 w-auto mx-auto mb-20 bounce" />
+       
+        <button class="p-3 rounded-md shadow-lg bg-cyan-200 w-52 hover:bg-cyan-300 mx-auto mb-8" (click)="start30()">30 Seconds</button>
+        <button class="p-3 rounded-md shadow-lg bg-cyan-200 w-52 hover:bg-cyan-300 mx-auto mb-8" (click)="start60()">1 Minute</button>
+        <button class="p-3 rounded-md shadow-lg bg-cyan-200 w-52 hover:bg-cyan-300 mx-auto" (click)="start2()">2 Minutes</button>
+
+        <label class="relative inline-flex items-center cursor-pointer mx-auto mt-16">
+            <input type="checkbox" [(ngModel)]="tiltedOn" class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+            <span class="ml-3 text-md font-medium text-black dark:text-gray-300">Tilted Mode</span>
+        </label>
+    </div>
+
+</div>

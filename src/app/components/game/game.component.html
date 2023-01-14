@@ -1,0 +1,35 @@
+<div class="w-screen h-screen game-container">
+    <div class="w-1/2 h-96 p-5 shadow-lg rounded-md quote-box bg-white flex flex-col justify-between align-middle">
+        <div class="w-full h-3/4">
+            <div #quoteContainer class="block w-full h-1/4 mb-2 text-sm font-medium text-gray-900 dark:text-white"></div>
+            <textarea
+                [disabled]="!typing_enabled"
+                [(ngModel)]="quote_input" 
+                #ctrl="ngModel"
+                #quoteInput
+                class="block w-full p-3 h-2/3 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                (input)="checkInput(quoteInput.value)"
+                >
+            </textarea>
+    
+        </div>
+        <div class="flex flex-row justify-between align-middle w-full">
+            <h3>Author: {{ quote.author ? quote.author : ''}}</h3>
+            <h3>Current WPM: {{ current_wpm }} </h3>
+            <h3>Time: {{ countdown_time }} </h3>
+        </div>
+    </div>
+    <div class="w-screen h-1/2 flex flex-col justify-center items-center">
+        <div class="h-fit"><h1 class="text-5xl p-20 font-bold text-center h-fit bounce">Tilted Typing</h1></div>
+    </div>
+    <div class="w-screen h-1/2 bg-cyan-100 flex flex-col justify-center items-center">
+        <div *ngIf="show_results_row" @fadeSlideInOut class="w-1/2 h-24 p-3 flex flex-row justify-between items-center rounded-md shadow-md bg-white">
+            <div>Final WPM: {{ final_wpm }}</div>
+            <div class="flex flex-row justify-center gap-2">
+                <button class="p-3 bg-cyan-100 rounded-md shadow-md hover:shadow-lg hover:bg-cyan-200" (click)="retry()">Retry</button>
+                <button class="p-3 bg-cyan-100 rounded-md shadow-md hover:shadow-lg hover:bg-cyan-200" (click)="history()">History</button>
+                <button class="p-3 bg-cyan-100 rounded-md shadow-md hover:shadow-lg hover:bg-cyan-200" (click)="home()">Home</button>
+            </div>
+        </div>
+    </div>
+</div>>

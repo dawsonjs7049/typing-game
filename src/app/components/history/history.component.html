@@ -1,0 +1,23 @@
+<div class="w-full h-screen bg-cyan-100 flex flex-col justify-center items-center">
+    <div class="h-fit"><h1 class="text-5xl p-20 font-bold text-center h-fit bounce">Top 10</h1></div>
+    <div *ngIf="records.length == 0" class="bg-white rounded-md p-10 shadow-md text-center">
+        <p class="text-3xl font-bold">
+            You don't have any results yet!
+        </p>
+    </div>
+    <div *ngIf="records.length > 0" @fadeSlideInOut class="p-5 bg-white rounded-md shadow-md w-96">
+        <div *ngFor="let record of records" class="bg-slate-100 rounded-md shadow-md my-3 p-4 flex flex-row justify-between items-center hover:shadow-lg hover:bg-slate-200">
+            <div>
+                Score: {{ record.score }}WPM
+            </div>
+            <div>
+                Date: {{ record.date | date }}
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-row mt-10">
+        <button (click)="home()" class="p-5 rounded-md shadow-md bg-cyan-500 hover:bg-cyan-600">
+            Home
+        </button>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+created using ng new typing-game --routing
+
+create component using ng generate component components/"name"
+    -> same with services
+
+add tailwindcss
+    -> npm install -D tailwindcss postcss autoprefixer @tailwindcss/forms
+    -> npx tailwindcss init
+    -> include tailwind css in styles.css
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+if you want to guard a route 
+    -> ng generate guard guards/auth --implements CanActivate
+    -> on app-routing-modules.ts include "canActivate: [AuthGuard]" under each path's component property
+    -> in auth.guard.ts add constructor to inject your auth service, and angular router. 
+    -> canActivate function should look something like this...
+        canActivate(): Obervable<boolean | UrlTree> {
+            return this.auth.currentUser.pipe(
+                filter(val => val !== null), // for cases where initial user is null
+                take(1),                     // currentUser is observable and we must make sure we have something to work with?
+                map((isAuthenticated) => {
+                    if(isAuthenticated)
+                    {
+                        return true
+                    }
+                    else 
+                    {
+                        return this.router.createUrlTree(['/']); // send user to login or base page or whatever
+                    }
+                })
+            )
+        }
+
+
+to start local server
+    -> ng serve -o
