@@ -59,6 +59,7 @@ export class GameComponent implements OnInit {
       this.quote.content.split("").forEach((word: string) => {
           let span: HTMLSpanElement = this.renderer.createElement('span');
           span.innerHTML = word;
+          span.style.color = 'black';
           this.renderer.appendChild(this.quoteContainer.nativeElement, span);
       });
     })

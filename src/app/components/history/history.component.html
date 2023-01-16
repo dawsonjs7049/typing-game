@@ -5,7 +5,7 @@
             You don't have any results yet!
         </p>
     </div>
-    <div *ngIf="records.length > 0" @fadeSlideInOut class="p-5 bg-white rounded-md shadow-md w-96">
+    <div *ngIf="records.length > 0" @fadeSlideInOut class="p-5 bg-white rounded-md shadow-md w-96 h-fit overflow-y-auto">
         <div *ngFor="let record of records" class="bg-slate-100 rounded-md shadow-md my-3 p-4 flex flex-row justify-between items-center hover:shadow-lg hover:bg-slate-200">
             <div>
                 Score: {{ record.score }}WPM
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="flex flex-row mt-10">
+    <div class="flex flex-row my-8">
         <button (click)="home()" class="p-5 rounded-md shadow-md bg-cyan-500 hover:bg-cyan-600">
             Home
         </button>

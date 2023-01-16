@@ -8,10 +8,10 @@
 }
 
 .correct {
-    color: green;
+    color: green !important;
 }
 
 .incorrect {
-    color: red;
+    color: red !important;
     text-decoration: underline;
 }
