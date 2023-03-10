@@ -40,12 +40,12 @@ export class HomeComponent implements OnInit {
 
   start60 = () =>
   {
-    this.router.navigate(['/game/60' + (this.tiltedOn ? '1' : '0')]);
+    this.router.navigate(['/game/60/' + (this.tiltedOn ? '1' : '0')]);
   }
 
   start2 = () =>
   {
-    this.router.navigate(['/game/120' + (this.tiltedOn ? '1' : '0')]);
+    this.router.navigate(['/game/120/' + (this.tiltedOn ? '1' : '0')]);
   }
 
 }
